@@ -1,9 +1,9 @@
-class Checked() :
-    def __init__(self) -> None:
-        pass
-    def show(self) :
-        print("Đây là repo test git của Nguyễn Hữu Khánh")
+import requests
+from bs4 import BeautifulSoup
 
-if __name__ == "__main__" :
-    Checked().show()
-    
+class checkrepo() :
+    def __init__(self) -> None:
+        self._session = requests.Session()
+    def run(self) :
+        rps = self._session.get("").text
+        pg = BeautifulSoup(rps , "html.parser")
