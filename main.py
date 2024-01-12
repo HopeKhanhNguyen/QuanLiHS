@@ -256,12 +256,12 @@ class MainApp(QMainWindow, Ui_MainWindow):
             self.view.itemChanged.connect(self.dataChange)
     
     def dataChange(self, item: QTableWidgetItem):
-        if item.column() not in [0]:
+        if item.column() not in [0, 2]:
             try:
                 text = item.text()
                 col  = item.column()
                 row = item.row()
-                msv = self.view.item(row, col).text()
+                msv = self.view.item(row, 2).text()
                 if col == 1: key = 'name'
                 elif col == 3: key = 'time_in'
                 elif col == 4: key = 'time_out'
